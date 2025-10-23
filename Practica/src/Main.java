@@ -2,6 +2,6 @@ import Consolas.ConsolaPrincipal;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        ConsolaPrincipal Ventana = new ConsolaPrincipal();
+        ConsolaPrincipal.main(args);
     }
 }
