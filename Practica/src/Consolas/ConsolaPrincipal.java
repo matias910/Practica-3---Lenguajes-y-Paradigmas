@@ -1,5 +1,7 @@
 package Consolas;
 
+import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,8 +23,10 @@ public class ConsolaPrincipal extends JFrame {
 
         // Texto Inicial //
         this.add(TextoInicial);
-        TextoInicial.setBounds(250, 20, 200, 40);
-        TextoInicial.setText("Ingresa la cadena FEN: ");
+        TextoInicial.setBounds(250, 10, 400, 40);
+        TextoInicial.setText("Ingresa la cadena FEN:");
+        TextoInicial.setFont(new Font("Georgia", Font.ITALIC, 24));
+        TextoInicial.setForeground(new Color(90, 40, 10));
 
         // Campo De Texto //
         this.add(FenString);
@@ -32,6 +36,8 @@ public class ConsolaPrincipal extends JFrame {
         this.add(BotonEnviarCadena);
         BotonEnviarCadena.setBounds(550, 70, 100, 40);
         BotonEnviarCadena.setText("Generar");
+        BotonEnviarCadena.setFont(new Font("Georgia", Font.ITALIC, 14));
+        BotonEnviarCadena.setForeground(new Color(90, 40, 10));
 
     }
 
