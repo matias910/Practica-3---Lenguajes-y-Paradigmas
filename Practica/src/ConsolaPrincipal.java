@@ -4,7 +4,7 @@ import javax.swing.border.EmptyBorder;
 
 public class ConsolaPrincipal extends JFrame {
 
-    private JButton NuevoTablero = new JButton("Nuevo");
+    private JButton NuevoTablero = new JButton("Nuevo Tablero");
     private JButton PosicionInicial = new JButton("Posicion Inicial");
     private JButton Rotar = new JButton("Rotar");
     private JButton Tema = new JButton("Cambiar Tema");
@@ -126,9 +126,21 @@ public class ConsolaPrincipal extends JFrame {
             tablero.vacio();
             CadenaFen.setText(" ");
         });
-        PosicionInicial.addActionListener(e -> tablero.posicionInicial());
+        PosicionInicial.addActionListener(e -> {
+            tablero.posicionInicial();
+            CadenaFen.setText("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+        });
         Rotar.addActionListener(e -> tablero.Rotar());
         Tema.addActionListener(e -> tablero.CambiarTema());
+        Generar.addActionListener(e -> {
+            try {
+                char[][] m = FenParser.parser(CadenaFen.getText());
+                tablero.setBoard(m);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Invalid FEN string\n" + ex.getMessage(),
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        });
         Borrar.addActionListener(e -> CadenaFen.setText(""));
         setVisible(true);
     }

@@ -169,4 +169,15 @@ public class Tablero extends JPanel {
         }
         repaint();
     }
+
+    public void setBoard(char[][] matrix) {
+        if (matrix == null)
+            return;
+        for (int r = 0; r < 8; r++) {
+            for (int c = 0; c < 8; c++) {
+                board[r][c] = matrix[r][c];
+            }
+        }
+        repaint();
+    }
 }
