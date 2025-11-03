@@ -19,14 +19,14 @@ public class Tablero extends JPanel {
 
     private Map<Character, BufferedImage> piezas = new HashMap<>();
     private final char[][] board = {
-            { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
-            { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
             { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
             { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
             { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
             { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
-            { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
-            { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+            { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+            { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+            { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+            { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
     };
 
     public Tablero() {
@@ -137,6 +137,35 @@ public class Tablero extends JPanel {
             Rotado = false;
         } else {
             Rotado = true;
+        }
+        repaint();
+    }
+
+    public void vacio() {
+        for (int fila = 0; fila < 8; fila++) {
+            for (int columna = 0; columna < 8; columna++) {
+                board[fila][columna] = ' ';
+            }
+        }
+        repaint();
+
+    }
+
+    public void posicionInicial() {
+        char[][] tableroInicial = {
+                { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+                { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+                { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
+                { 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+                { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+        };
+        for (int fila = 0; fila < 8; fila++) {
+            for (int columna = 0; columna < 8; columna++) {
+                board[fila][columna] = tableroInicial[fila][columna];
+            }
         }
         repaint();
     }
