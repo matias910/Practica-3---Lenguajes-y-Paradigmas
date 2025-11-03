@@ -1,10 +1,9 @@
 import java.awt.*;
-import javax.swing.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 public class Tablero extends JPanel {
 
@@ -121,24 +120,6 @@ public class Tablero extends JPanel {
         try {
             piezas.put(a, ImageIO.read(getClass().getResource(ruta)));
         } catch (Exception e) {
-        }
-    }
-
-    private void llenarTablero(Graphics2D g2, char piece, int x, int y, int square){
-        String asignacion = switch(piece){
-            case 'K' -> "♔";
-            case 'Q' -> "♕";
-            case 'R' -> "♖";
-            case 'B' -> "♗";
-            case 'N' -> "♘";
-            case 'P' -> "♙";
-            case 'k' -> "♚";
-            case 'q' -> "♛";
-            case 'r' -> "♜";
-            case 'b' -> "♝";
-            case 'n' -> "♞";
-            case 'p' -> "♟";
-            default -> "";
         }
     }
 
